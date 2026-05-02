@@ -1,5 +1,4 @@
 <?php
-// FILE PATH: app/Models/StockMovement.php
 
 namespace App\Models;
 
@@ -8,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class StockMovement extends Model
 {
     protected $fillable = [
-        'product_id', 'type', 'quantity', 'reference', 'notes', 'user_id',
+        'product_id',
+        'type',
+        'quantity',
+        'reference',
+        'notes',
+        'user_id',
     ];
 
     public function product()
