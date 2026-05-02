@@ -22,8 +22,8 @@ RUN sed -i 's/<VirtualHost \*:80>/<VirtualHost *:10000>/g' /etc/apache2/sites-av
 
 # Set Laravel public as document root
 
-RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-
-available/000-default.conf \
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
+    && sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/apache2.conf
 
 && sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/apache2.conf
 # Allow .htaccess for Laravel
