@@ -1,9 +1,13 @@
 <?php
+<<<<<<< HEAD
 // FILE PATH: database/seeders/DatabaseSeeder.php
+=======
+>>>>>>> 65b51754ff66c222a1d9fdc027683d09d9afc9cc
 
 namespace Database\Seeders;
 
 use App\Models\User;
+<<<<<<< HEAD
 use App\Models\Category;
 use App\Models\Supplier;
 use App\Models\Product;
@@ -75,3 +79,25 @@ class DatabaseSeeder extends Seeder
         }
     }
 }
+=======
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    use WithoutModelEvents;
+
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        // User::factory(10)->create();
+
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
+    }
+}
+>>>>>>> 65b51754ff66c222a1d9fdc027683d09d9afc9cc
