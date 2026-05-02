@@ -47,6 +47,9 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
+# Regenerate autoload  ← BAGO IDAGDAG
+RUN composer dump-autoload --optimize
+
 # Install frontend dependencies and build assets
 RUN npm install && npm run build
 
@@ -64,7 +67,7 @@ RUN mkdir -p storage/framework/cache storage/framework/sessions \
     && chown -R www-data:www-data storage bootstrap/cache public/uploads \
     && chmod -R 775 storage bootstrap/cache public/uploads
 
-# (Optional) Run migrations
+# Run migrations
 RUN php artisan migrate --force || true
 
 # Expose port
